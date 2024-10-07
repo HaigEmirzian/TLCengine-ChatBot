@@ -10,7 +10,7 @@ client = MongoClient("???")
 db = client["???"]
 collection = db["???"]
 
-# LLaMA3 init
+# llama init
 model_name = "meta-llama/Llama-3.2-1B"
 tokenizer = LlamaTokenizer.from_pretrained(model_name)
 model = LlamaForCausalLM.from_pretrained(model_name)
@@ -19,7 +19,8 @@ model = LlamaForCausalLM.from_pretrained(model_name)
 def retrieve_data_from_mongo(user_query):
     mongo_query = {
         "$text": {
-            "$search": user_query  # Full-text search on all fields indexed for text search
+            # Full-text search on all fields indexed for text search
+            "$search": user_query
         }
     }
 
@@ -29,11 +30,11 @@ def retrieve_data_from_mongo(user_query):
     if len(retrieved_docs) == 0:
         return "No relevant property information found."
 
-    # Format retrieved data into a string for the LLaMA model
+    # Format retrieved data into a string for the llama model
     processed_data = ""
     for doc in retrieved_docs:
         for key, value in doc.items():
-            # Exclude mongo internal ID field
+            # Exclude mongo internal id field
             if key != "_id":
                 processed_data += f"{key.capitalize()}: {value}\n"
         processed_data += "\n"
