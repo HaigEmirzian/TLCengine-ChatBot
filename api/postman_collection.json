@@ -1,0 +1,2789 @@
+{
+	"info": {
+		"_postman_id": "b650f9c5-64c5-4ccc-b0d1-3ed23770cdef",
+		"name": "IPS Share : TLC Engine API - v3 -KRishna - UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38845971"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Get Client Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client Favorites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[3]"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/favorites",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client Favorites",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 51475c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/favorites",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client - Validate Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientId\":13191,\n    \"emailAddress\":\"sanjay@tlcengine.com\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/verifyduplicates",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"verifyduplicates"
+							]
+						},
+						"description": "This API is used for both operations adding client and updating a client.\nWhile adding a client in clientId, you should pass 0 and for updating it should be the id of client."
+					},
+					"response": []
+				},
+				{
+					"name": "Client - Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Id\": 10306,\n  \"Email\": \"nirmal.c+TEST@itpathsolutions.com\",\n  \"FirstName\": \"Nirmal\",\n  \"LastName\": \"Chauhan\",\n  \"Profile\": {\n    \"BasicData\": {\n      \"FirstName\": \"Natalia \",\n      \"LastName\": \"Mendoza\",\n      \"Email\": \"josemendoza@edinarealty.com\",\n      \"MStatus\": \"single\",\n      \"NumberOfAdults\": 0,\n      \"OlderChildren\": 0,\n      \"YoungChildren\": 0,\n      \"ChildDetail\": [\n        \n      ],\n      \"InterestedInBuying\": false,\n      \"InterestedInSelling\": false,\n      \"WorkingWithTCOAgent\": false,\n      \"AdultDetail\": [\n        \n      ],\n      \"CreditScore\": \"760-850\",\n      \"CellPhone\": \"\",\n      \"HomePhone\": \"\",\n      \"TLCMin\": 500.0,\n      \"TLCMax\": 500.0,\n      \"HidePersonalDetailFromAgent\": true,\n      \"KnownHomeLoanAPR\": 0.0\n    },\n    \"IncomeData\": {\n      \"IncomeDetail\": [\n        {\n          \"IncomeDetailTitle\": \"\",\n          \"GrossPay\": 0.0,\n          \"PayPeriod\": \"\",\n          \"FilingStatus\": \"single\",\n          \"NumberOfAllowances\": 2,\n          \"TaxDeferralPlan\": 0.0,\n          \"OtherPreTaxDeduction\": 0.0,\n          \"StateLocalTaxes\": 0.0,\n          \"OtherPostTaxDeduction\": 0.0,\n          \"PostTaxReimbursement\": 0.0,\n          \"NetPay\": 9000.0,\n          \"NetPayPeriod\": \"Monthly\",\n          \"NetTaxBracket\": 39.6\n        }\n      ]\n    },\n    \"CommuteData\": {\n      \"CommuteDetail\": [\n        {\n          \"WorkAddress\": \"\",\n          \"City\": \"\",\n          \"State\": \"\",\n          \"ZipCode\": \"\",\n          \"CarYear\": 2014,\n          \"CarMake\": \"Jeep\",\n          \"CarModel\": \"Cherokee FWD\",\n          \"CarType\": \"34376\",\n          \"CityMPG\": 19,\n          \"HwyMPG\": 28,\n          \"IsCarPaidOffOrLoan\": \"\",\n          \"LoanAmount\": 0.0,\n          \"LoanTerm\": 0,\n          \"LoanMonthlyPayment\": 0.0,\n          \"CarInsurancePayment\": 0.0,\n          \"CarInsuranceTerm\": \"\",\n          \"CarMaintenancePayment\": 0.0,\n          \"DaysOfCommute\": 5,\n          \"TransportationType\": \"car\",\n          \"GasCost\": 0.0,\n          \"ParkingCost\": 0.0,\n          \"TollCost\": 0.0,\n          \"Time\": 0.0,\n          \"Distance\": 0.0,\n          \"TransitCost\": 0.0,\n          \"GasRate\": 0.0\n        }\n      ]\n    },\n    \"CurrentResidenceData\": {\n      \"ResidenceAddress\": \"\",\n      \"City\": null,\n      \"State\": null,\n      \"ZipCode\": null,\n      \"Beds\": 0,\n      \"Baths\": 0,\n      \"Sqft\": 0.0,\n      \"RentMortgage\": 0.0,\n      \"HomeRentInsurance\": 0.0,\n      \"LawnCare\": 0.0,\n      \"Taxes\": 0.0,\n      \"Electricity\": 0.0,\n      \"Gas\": 0.0,\n      \"WaterAndSewer\": 0.0,\n      \"WasteRemoval\": 0.0,\n      \"MaintenanceOrRepair\": 0.0,\n      \"Cable\": 0.0,\n      \"Internet\": 0.0,\n      \"Phone\": 0.0,\n      \"Cell\": 0.0,\n      \"Other\": 0.0,\n      \"Success\": false,\n      \"Message\": \"\"\n    },\n    \"DebtData\": {\n      \"DebtDetail\": [\n        {\n          \"Name\": \"#1\",\n          \"Amount\": 0.0,\n          \"APR\": 0.0,\n          \"MonthlyPayment\": 500.0\n        }\n      ]\n    },\n    \"AssetData\": {\n      \"CashOnHand\": 0.0,\n      \"CheckingAccounts\": [\n        \n      ],\n      \"SavingAccounts\": [\n        \n      ],\n      \"CD\": [\n        \n      ],\n      \"RetirementAccounts\": [\n        \n      ]\n    },\n    \"FinancialData\": {\n      \"EntertainmentVideoDVD\": 0.0,\n      \"EntertainmentCDs\": 0.0,\n      \"EntertainmentMovies\": 0.0,\n      \"EntertainmentConcerts\": 0.0,\n      \"EntertainmentSportingEvents\": 0.0,\n      \"EntertainmentLiveTheator\": 0.0,\n      \"EntertainmentOther\": 0.0,\n      \"FoodGroceries\": 0.0,\n      \"FoodDiningOut\": 0.0,\n      \"FoodOther\": 0.0,\n      \"PersonalCareMedical\": 0.0,\n      \"PersonalCareHairNail\": 0.0,\n      \"PersonalCareClothing\": 0.0,\n      \"PersonalCareDryCleaning\": 0.0,\n      \"PersonalCareHealthClub\": 0.0,\n      \"PersonalCareOrganizationDuesOrFees\": 0.0,\n      \"PersonalCareOther\": 0.0,\n      \"InsuranceHealth\": 0.0,\n      \"InsuranceLife\": 0.0,\n      \"InsuranceOther\": 0.0,\n      \"TransportationBusTaxiFare\": 0.0,\n      \"TransportationLicensing\": 0.0,\n      \"TransportationFuel\": 0.0,\n      \"TransportationMaintenance\": 0.0,\n      \"TransportationTollsPerMonth\": 0.0,\n      \"TransportationOther\": 0.0,\n      \"SavingInvestmentRetirementAccount\": 0.0,\n      \"SavingInvestmentInvestmentAccount\": 0.0,\n      \"DonationCharity\": 0.0,\n      \"LegalAttorney\": 0.0,\n      \"LegalAlimony\": 0.0,\n      \"LegalPaymentOnLienOrJudgement\": 0.0,\n      \"LegalOther\": 0.0,\n      \"CreditScore\": \"\"\n    },\n    \"LifeStyleData\": {\n      \"AddAirport\": false,\n      \"DistanceFromAirport\": 0.0,\n      \"AddGolf\": false,\n      \"DistanceFromGolf\": 0.0,\n      \"AddSkiing\": false,\n      \"DistanceFromSkiing\": 0.0,\n      \"AddBeach\": false,\n      \"DistanceFromBeach\": 0.0,\n      \"AddGrociers\": false,\n      \"DistanceFromGrociers\": 0.0,\n      \"AddSuperStores\": false,\n      \"DistanceFromSuperStores\": 0.0,\n      \"AddPharmacies\": false,\n      \"DistanceFromPharmacies\": 0.0,\n      \"AddHousehold\": false,\n      \"DistanceFromHousehold\": 0.0,\n      \"AddMovieTheaters\": false,\n      \"DistanceFromMovieTheaters\": 0.0,\n      \"AddPublicTransport\": false,\n      \"DistanceFromPublicTransport\": 0.0,\n      \"FamilyDetail\": [\n        \n      ]\n    },\n    \"EntertainmentData\": {\n      \"Internet\": 0.0,\n      \"TV\": \"\",\n      \"TVCharges\": 0.0,\n      \"Cell\": 0.0,\n      \"Phone\": 0.0,\n      \"Other\": \n            {\n                \"OtherDetail\":[\n                    {\n                        \"Title\":\"Other1\",\n                        \"Amount\":20\n                    },\n                    {\n                        \"Title\":\"Other2\",\n                        \"Amount\":30\n                        \n                    }\n                    ]\n            }\n    },\n    \"OtherTLCData\": {\n      \"UtilitiesHeatingCooling\": 0.0,\n      \"UtilitiesWaterSewer\": 0.0,\n      \"UtilitiesGarbage\": 0.0,\n      \"UtilitiesLawnSnowCare\": 0.0,\n      \"UtilitiesOther\": 0.0,\n      \"CommuteGasCost\": 0.0,\n      \"CommuteParking\": 0.0,\n      \"CommuteToll\": 0.0,\n      \"CommuteMaintenance\": 0.0,\n      \"CommuteInsurance\": 0.0\n    }\n  },\n  \"LastUpdatedOn\": \"2015-03-11T20:18:46\",\n  \"AgentId\": \"2fdd34c1-fb51-43ed-a478-27593e9cec0a\",\n  \"Bookmarks\": [],\n  \"Favorites\": [],\n  \"Protected\": true,\n  \"SupportingInformation\":\n  {\n      \"ProfileCompletionPercentage\":20\n  }\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Client - Validate and get Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"Username\":\"kpclient\",\n \"Password\":\"xxx\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/accesstokens/clients",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"accesstokens",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Client Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/resettokens",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"resettokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client Favorites",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[3]"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/favorites",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client - Get Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Saved Search by Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"SearchName\":\"ClientSearch01\",\n  \"SearchParameters\":{\"Beds\":\"5\"},\n  \"RequiredNotification\":true\n}\n"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/savedsearches",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"savedsearches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Saved Search by Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"SearchName\":\"ClientSearch01\",\n  \"SearchParameters\":{\"Beds\":\"5\"},\n  \"RequiredNotification\":false\n}\n"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/savedsearches/2123",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"savedsearches",
+								"2123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Saved Searches by Client",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/savedsearches",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"savedsearches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Saved Searches by Client",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/savedsearches/2123",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"savedsearches",
+								"2123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Saved Search by Client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/savedsearches/2125",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"savedsearches",
+								"2125"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client - Delete bookmarks for client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[4]"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/bookmarks",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"bookmarks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get agent details of client",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/agent",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"agent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookmarks by client",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/bookmarks",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"bookmarks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Note by Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"Type\":\"Personal\",\n\"Note\":\"Test20Apr124\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/clients/13191/notes",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"clients",
+								"13191",
+								"notes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "Agent - Client - Validate Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientId\":10310,\n    \"emailAddress\":\"nirmal.c@itpathsolutions.com\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/verifyduplicates",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"verifyduplicates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent - Client - Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Id\": 60,\n  \"Email\": \"nirmal.c09@itpathsolutions.com\",\n  \"FirstName\": \"Nirmal\",\n  \"LastName\": \"Chauhan\",\n  \"Profile\": {\n    \"BasicData\": {\n      \"FirstName\": \"Natalia \",\n      \"LastName\": \"Mendoza\",\n      \"Email\": \"josemendoza@edinarealty.com\",\n      \"MStatus\": \"single\",\n      \"NumberOfAdults\": 0,\n      \"OlderChildren\": 0,\n      \"YoungChildren\": 0,\n      \"ChildDetail\": [\n        \n      ],\n      \"InterestedInBuying\": false,\n      \"InterestedInSelling\": false,\n      \"WorkingWithTCOAgent\": false,\n      \"AdultDetail\": [\n        \n      ],\n      \"CreditScore\": \"760-850\",\n      \"CellPhone\": \"\",\n      \"HomePhone\": \"\",\n      \"TLCMin\": 500.0,\n      \"TLCMax\": 500.0,\n      \"HidePersonalDetailFromAgent\": true,\n      \"KnownHomeLoanAPR\": 0.0\n    },\n    \"IncomeData\": {\n      \"IncomeDetail\": [\n        {\n          \"IncomeDetailTitle\": \"\",\n          \"GrossPay\": 0.0,\n          \"PayPeriod\": \"\",\n          \"FilingStatus\": \"single\",\n          \"NumberOfAllowances\": 2,\n          \"TaxDeferralPlan\": 0.0,\n          \"OtherPreTaxDeduction\": 0.0,\n          \"StateLocalTaxes\": 0.0,\n          \"OtherPostTaxDeduction\": 0.0,\n          \"PostTaxReimbursement\": 0.0,\n          \"NetPay\": 9000.0,\n          \"NetPayPeriod\": \"Monthly\",\n          \"NetTaxBracket\": 39.6\n        }\n      ]\n    },\n    \"CommuteData\": {\n      \"CommuteDetail\": [\n        {\n          \"WorkAddress\": \"\",\n          \"City\": \"\",\n          \"State\": \"\",\n          \"ZipCode\": \"\",\n          \"CarYear\": 2014,\n          \"CarMake\": \"Jeep\",\n          \"CarModel\": \"Cherokee FWD\",\n          \"CarType\": \"34376\",\n          \"CityMPG\": 19,\n          \"HwyMPG\": 28,\n          \"IsCarPaidOffOrLoan\": \"\",\n          \"LoanAmount\": 0.0,\n          \"LoanTerm\": 0,\n          \"LoanMonthlyPayment\": 0.0,\n          \"CarInsurancePayment\": 0.0,\n          \"CarInsuranceTerm\": \"\",\n          \"CarMaintenancePayment\": 0.0,\n          \"DaysOfCommute\": 5,\n          \"TransportationType\": \"car\",\n          \"GasCost\": 0.0,\n          \"ParkingCost\": 0.0,\n          \"TollCost\": 0.0,\n          \"Time\": 0.0,\n          \"Distance\": 0.0,\n          \"TransitCost\": 0.0,\n          \"GasRate\": 0.0\n        }\n      ]\n    },\n    \"CurrentResidenceData\": {\n      \"ResidenceAddress\": \"\",\n      \"City\": null,\n      \"State\": null,\n      \"ZipCode\": null,\n      \"Beds\": 0,\n      \"Baths\": 0,\n      \"Sqft\": 0.0,\n      \"RentMortgage\": 0.0,\n      \"HomeRentInsurance\": 0.0,\n      \"LawnCare\": 0.0,\n      \"Taxes\": 0.0,\n      \"Electricity\": 0.0,\n      \"Gas\": 0.0,\n      \"WaterAndSewer\": 0.0,\n      \"WasteRemoval\": 0.0,\n      \"MaintenanceOrRepair\": 0.0,\n      \"Cable\": 0.0,\n      \"Internet\": 0.0,\n      \"Phone\": 0.0,\n      \"Cell\": 0.0,\n      \"Other\": 0.0,\n      \"Success\": false,\n      \"Message\": \"\"\n    },\n    \"DebtData\": {\n      \"DebtDetail\": [\n        {\n          \"Name\": \"#1\",\n          \"Amount\": 0.0,\n          \"APR\": 0.0,\n          \"MonthlyPayment\": 500.0\n        }\n      ]\n    },\n    \"AssetData\": {\n      \"CashOnHand\": 0.0,\n      \"CheckingAccounts\": [\n        \n      ],\n      \"SavingAccounts\": [\n        \n      ],\n      \"CD\": [\n        \n      ],\n      \"RetirementAccounts\": [\n        \n      ]\n    },\n    \"FinancialData\": {\n      \"EntertainmentVideoDVD\": 0.0,\n      \"EntertainmentCDs\": 0.0,\n      \"EntertainmentMovies\": 0.0,\n      \"EntertainmentConcerts\": 0.0,\n      \"EntertainmentSportingEvents\": 0.0,\n      \"EntertainmentLiveTheator\": 0.0,\n      \"EntertainmentOther\": 0.0,\n      \"FoodGroceries\": 0.0,\n      \"FoodDiningOut\": 0.0,\n      \"FoodOther\": 0.0,\n      \"PersonalCareMedical\": 0.0,\n      \"PersonalCareHairNail\": 0.0,\n      \"PersonalCareClothing\": 0.0,\n      \"PersonalCareDryCleaning\": 0.0,\n      \"PersonalCareHealthClub\": 0.0,\n      \"PersonalCareOrganizationDuesOrFees\": 0.0,\n      \"PersonalCareOther\": 0.0,\n      \"InsuranceHealth\": 0.0,\n      \"InsuranceLife\": 0.0,\n      \"InsuranceOther\": 0.0,\n      \"TransportationBusTaxiFare\": 0.0,\n      \"TransportationLicensing\": 0.0,\n      \"TransportationFuel\": 0.0,\n      \"TransportationMaintenance\": 0.0,\n      \"TransportationTollsPerMonth\": 0.0,\n      \"TransportationOther\": 0.0,\n      \"SavingInvestmentRetirementAccount\": 0.0,\n      \"SavingInvestmentInvestmentAccount\": 0.0,\n      \"DonationCharity\": 0.0,\n      \"LegalAttorney\": 0.0,\n      \"LegalAlimony\": 0.0,\n      \"LegalPaymentOnLienOrJudgement\": 0.0,\n      \"LegalOther\": 0.0,\n      \"CreditScore\": \"\"\n    },\n    \"LifeStyleData\": {\n      \"AddAirport\": false,\n      \"DistanceFromAirport\": 0.0,\n      \"AddGolf\": false,\n      \"DistanceFromGolf\": 0.0,\n      \"AddSkiing\": false,\n      \"DistanceFromSkiing\": 0.0,\n      \"AddBeach\": false,\n      \"DistanceFromBeach\": 0.0,\n      \"AddGrociers\": false,\n      \"DistanceFromGrociers\": 0.0,\n      \"AddSuperStores\": false,\n      \"DistanceFromSuperStores\": 0.0,\n      \"AddPharmacies\": false,\n      \"DistanceFromPharmacies\": 0.0,\n      \"AddHousehold\": false,\n      \"DistanceFromHousehold\": 0.0,\n      \"AddMovieTheaters\": false,\n      \"DistanceFromMovieTheaters\": 0.0,\n      \"AddPublicTransport\": false,\n      \"DistanceFromPublicTransport\": 0.0,\n      \"FamilyDetail\": [\n        \n      ]\n    },\n    \"EntertainmentData\": {\n      \"Internet\": 0.0,\n      \"TV\": \"\",\n      \"TVCharges\": 0.0,\n      \"Cell\": 0.0,\n      \"Phone\": 0.0,\n      \"Other\": \n            {\n                \"OtherDetail\":[\n                    {\n                        \"Title\":\"Other1\",\n                        \"Amount\":20\n                    },\n                    {\n                        \"Title\":\"Other2\",\n                        \"Amount\":30\n                        \n                    }\n                    ]\n            }\n    },\n    \"OtherTLCData\": {\n      \"UtilitiesHeatingCooling\": 0.0,\n      \"UtilitiesWaterSewer\": 0.0,\n      \"UtilitiesGarbage\": 0.0,\n      \"UtilitiesLawnSnowCare\": 0.0,\n      \"UtilitiesOther\": 0.0,\n      \"CommuteGasCost\": 0.0,\n      \"CommuteParking\": 0.0,\n      \"CommuteToll\": 0.0,\n      \"CommuteMaintenance\": 0.0,\n      \"CommuteInsurance\": 0.0\n    }\n  },\n  \"LastUpdatedOn\": \"2015-03-11T20:18:46\",\n  \"AgentId\": \"2fdd34c1-fb51-43ed-a478-27593e9cec0a\",\n  \"Bookmarks\": [],\n  \"Favorites\": [],\n  \"Protected\": true\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13194",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13194"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer 5c67c3c0-ec0d-4dfb-9bc3-f9c36655b444"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Id\": 0,\n  \"Email\": \"nirmal.c+qa@itpathsolutions.com\",\n  \"FirstName\": \"Nirmal\",\n  \"LastName\": \"Chauhan\",\n  \"Profile\": {\n    \"BasicData\": {\n      \"FirstName\": \"Natalia \",\n      \"LastName\": \"Mendoza\",\n      \"Email\": \"josemendoza@edinarealty.com\",\n      \"MStatus\": \"single\",\n      \"NumberOfAdults\": 0,\n      \"OlderChildren\": 0,\n      \"YoungChildren\": 0,\n      \"ChildDetail\": [\n        \n      ],\n      \"InterestedInBuying\": false,\n      \"InterestedInSelling\": false,\n      \"WorkingWithTCOAgent\": false,\n      \"AdultDetail\": [\n        \n      ],\n      \"CreditScore\": \"760-850\",\n      \"CellPhone\": \"\",\n      \"HomePhone\": \"\",\n      \"TLCMin\": 500.0,\n      \"TLCMax\": 500.0,\n      \"HidePersonalDetailFromAgent\": true,\n      \"KnownHomeLoanAPR\": 0.0\n    },\n    \"IncomeData\": {\n      \"IncomeDetail\": [\n        {\n          \"IncomeDetailTitle\": \"\",\n          \"GrossPay\": 0.0,\n          \"PayPeriod\": \"\",\n          \"FilingStatus\": \"single\",\n          \"NumberOfAllowances\": 2,\n          \"TaxDeferralPlan\": 0.0,\n          \"OtherPreTaxDeduction\": 0.0,\n          \"StateLocalTaxes\": 0.0,\n          \"OtherPostTaxDeduction\": 0.0,\n          \"PostTaxReimbursement\": 0.0,\n          \"NetPay\": 9000.0,\n          \"NetPayPeriod\": \"Monthly\",\n          \"NetTaxBracket\": 39.6\n        }\n      ]\n    },\n    \"CommuteData\": {\n      \"CommuteDetail\": [\n        {\n          \"WorkAddress\": \"\",\n          \"City\": \"\",\n          \"State\": \"\",\n          \"ZipCode\": \"\",\n          \"CarYear\": 2014,\n          \"CarMake\": \"Jeep\",\n          \"CarModel\": \"Cherokee FWD\",\n          \"CarType\": \"34376\",\n          \"CityMPG\": 19,\n          \"HwyMPG\": 28,\n          \"IsCarPaidOffOrLoan\": \"\",\n          \"LoanAmount\": 0.0,\n          \"LoanTerm\": 0,\n          \"LoanMonthlyPayment\": 0.0,\n          \"CarInsurancePayment\": 0.0,\n          \"CarInsuranceTerm\": \"\",\n          \"CarMaintenancePayment\": 0.0,\n          \"DaysOfCommute\": 5,\n          \"TransportationType\": \"car\",\n          \"GasCost\": 0.0,\n          \"ParkingCost\": 0.0,\n          \"TollCost\": 0.0,\n          \"Time\": 0.0,\n          \"Distance\": 0.0,\n          \"TransitCost\": 0.0,\n          \"GasRate\": 0.0\n        }\n      ]\n    },\n    \"CurrentResidenceData\": {\n      \"ResidenceAddress\": \"\",\n      \"City\": null,\n      \"State\": null,\n      \"ZipCode\": null,\n      \"Beds\": 0,\n      \"Baths\": 0,\n      \"Sqft\": 0.0,\n      \"RentMortgage\": 0.0,\n      \"HomeRentInsurance\": 0.0,\n      \"LawnCare\": 0.0,\n      \"Taxes\": 0.0,\n      \"Electricity\": 0.0,\n      \"Gas\": 0.0,\n      \"WaterAndSewer\": 0.0,\n      \"WasteRemoval\": 0.0,\n      \"MaintenanceOrRepair\": 0.0,\n      \"Cable\": 0.0,\n      \"Internet\": 0.0,\n      \"Phone\": 0.0,\n      \"Cell\": 0.0,\n      \"Other\": 0.0,\n      \"Success\": false,\n      \"Message\": \"\"\n    },\n    \"DebtData\": {\n      \"DebtDetail\": [\n        {\n          \"Name\": \"#1\",\n          \"Amount\": 0.0,\n          \"APR\": 0.0,\n          \"MonthlyPayment\": 500.0\n        }\n      ]\n    },\n    \"AssetData\": {\n      \"CashOnHand\": 0.0,\n      \"CheckingAccounts\": [\n        \n      ],\n      \"SavingAccounts\": [\n        \n      ],\n      \"CD\": [\n        \n      ],\n      \"RetirementAccounts\": [\n        \n      ]\n    },\n    \"FinancialData\": {\n      \"EntertainmentVideoDVD\": 0.0,\n      \"EntertainmentCDs\": 0.0,\n      \"EntertainmentMovies\": 0.0,\n      \"EntertainmentConcerts\": 0.0,\n      \"EntertainmentSportingEvents\": 0.0,\n      \"EntertainmentLiveTheator\": 0.0,\n      \"EntertainmentOther\": 0.0,\n      \"FoodGroceries\": 0.0,\n      \"FoodDiningOut\": 0.0,\n      \"FoodOther\": 0.0,\n      \"PersonalCareMedical\": 0.0,\n      \"PersonalCareHairNail\": 0.0,\n      \"PersonalCareClothing\": 0.0,\n      \"PersonalCareDryCleaning\": 0.0,\n      \"PersonalCareHealthClub\": 0.0,\n      \"PersonalCareOrganizationDuesOrFees\": 0.0,\n      \"PersonalCareOther\": 0.0,\n      \"InsuranceHealth\": 0.0,\n      \"InsuranceLife\": 0.0,\n      \"InsuranceOther\": 0.0,\n      \"TransportationBusTaxiFare\": 0.0,\n      \"TransportationLicensing\": 0.0,\n      \"TransportationFuel\": 0.0,\n      \"TransportationMaintenance\": 0.0,\n      \"TransportationTollsPerMonth\": 0.0,\n      \"TransportationOther\": 0.0,\n      \"SavingInvestmentRetirementAccount\": 0.0,\n      \"SavingInvestmentInvestmentAccount\": 0.0,\n      \"DonationCharity\": 0.0,\n      \"LegalAttorney\": 0.0,\n      \"LegalAlimony\": 0.0,\n      \"LegalPaymentOnLienOrJudgement\": 0.0,\n      \"LegalOther\": 0.0,\n      \"CreditScore\": \"\"\n    },\n    \"LifeStyleData\": {\n      \"AddAirport\": false,\n      \"DistanceFromAirport\": 0.0,\n      \"AddGolf\": false,\n      \"DistanceFromGolf\": 0.0,\n      \"AddSkiing\": false,\n      \"DistanceFromSkiing\": 0.0,\n      \"AddBeach\": false,\n      \"DistanceFromBeach\": 0.0,\n      \"AddGrociers\": false,\n      \"DistanceFromGrociers\": 0.0,\n      \"AddSuperStores\": false,\n      \"DistanceFromSuperStores\": 0.0,\n      \"AddPharmacies\": false,\n      \"DistanceFromPharmacies\": 0.0,\n      \"AddHousehold\": false,\n      \"DistanceFromHousehold\": 0.0,\n      \"AddMovieTheaters\": false,\n      \"DistanceFromMovieTheaters\": 0.0,\n      \"AddPublicTransport\": false,\n      \"DistanceFromPublicTransport\": 0.0,\n      \"FamilyDetail\": [\n        \n      ]\n    },\n    \"EntertainmentData\": {\n      \"Internet\": 0.0,\n      \"TV\": \"\",\n      \"TVCharges\": 0.0,\n      \"Cell\": 0.0,\n      \"Phone\": 0.0,\n      \"Other\": \n            {\n                \"OtherDetail\":[\n                    {\n                        \"Title\":\"Other1\",\n                        \"Amount\":20\n                    },\n                    {\n                        \"Title\":\"Other2\",\n                        \"Amount\":30\n                        \n                    }\n                    ]\n            }\n    },\n    \"OtherTLCData\": {\n      \"UtilitiesHeatingCooling\": 0.0,\n      \"UtilitiesWaterSewer\": 0.0,\n      \"UtilitiesGarbage\": 0.0,\n      \"UtilitiesLawnSnowCare\": 0.0,\n      \"UtilitiesOther\": 0.0,\n      \"CommuteGasCost\": 0.0,\n      \"CommuteParking\": 0.0,\n      \"CommuteToll\": 0.0,\n      \"CommuteMaintenance\": 0.0,\n      \"CommuteInsurance\": 0.0\n    }\n  },\n  \"LastUpdatedOn\": \"2015-03-11T20:18:46\",\n  \"AgentId\": \"2fdd34c1-fb51-43ed-a478-27593e9cec0a\",\n  \"Bookmarks\": [],\n  \"Favorites\": [],\n  \"Protected\": true,\n  \"SupportingInformation\":\n  {\n      \"ProfileCompletionPercentage\":20\n  }\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clients list of Agent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clients bookmarks list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13191/bookmarks",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13191",
+								"bookmarks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Client Analytics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clientAnalytics",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clientAnalytics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clients list with Profile of Agent ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients?format=full",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "full"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client Saved Search by Agent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"SearchName\":\"AGS281\",\n  \"SearchParameters\":{\"Beds\":\"1\"},\n  \"RequiredNotification\":true\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13191/savedsearches",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13191",
+								"savedsearches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Agent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Saved Search by Agent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer  5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"SearchName\":\"MySearch01\",\n  \"SearchParameters\":{\"Beds\":\"1\"},\n  \"RequiredNotification\":true\n}\n"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/savedsearches/1490",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"savedsearches",
+								"1490"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agent Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"agentId\":\"2FDD34C1-FB51-43ED-A478-27593E9CEC0A\",\"firstName\":\"Krishna\",\"lastName\":\"Malyala\",\"phone\":\"7165755626\",\"profile\":{\"ProfileImageName\":\"\",\"BannerImageName\":\"\",\"MyListingField\":\"\",\"FacebookPageURL\":\"\",\"TwitterPageURL\":\"\",\"LinkedInPageURL\":\"\",\"AgentVanityURLName\":\"\"}}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Saved Search by Agent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"SearchName\":\"MySearch01\",\n  \"SearchParameters\":{\"Beds\":\"1\"},\n  \"RequiredNotification\":true\n}\n"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/savedsearches",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"savedsearches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific client details fetched bt Agent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13194",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13194"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add bookmark for client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ListingIds\":[2],\n\"Note\":\"Note for client\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13191/bookmarks",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13191",
+								"bookmarks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Agent - Validate and get Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"Username\":\"kpagent\",\n \"Password\":\"xxx\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/accesstokens/agents",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"accesstokens",
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Saved Searches by Agent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/nsmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/savedsearches/",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"nsmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"savedsearches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific Saved Search by Agent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/savedsearches/2116",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"savedsearches",
+								"2116"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Saved Search by Agent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/savedsearches/2116",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"savedsearches",
+								"2116"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Iframe Vendor Instruction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/iFrameVendorInstructions",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"iFrameVendorInstructions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update lifestyle data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"WaterSewerCharge\":-10,\n    \"HeatingCoolingCost\":\"10qwe\",\n    \"LawnSnowCare\":10,\n    \"PhoneCharge\":10,\n    \"CellPhoneCharge\":10, \n    \"InternetCharge\":10,\n    \"TelevisionCharge\":10\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/listings/2570495/lifestyledata",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"listings",
+								"2570495",
+								"lifestyledata"
+							]
+						},
+						"description": "This API is for updating TLC values for Entertainment costs and utilities costs."
+					},
+					"response": []
+				},
+				{
+					"name": "Share Savedsearch with client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/savedsearches/1490/clients/13191",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"savedsearches",
+								"1490",
+								"clients",
+								"13191"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAML SSO VIA REDIRECT and POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "SAMLResponse",
+									"value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c2FtbDJwOlJlc3BvbnNlIHhtbG5zOnNhbWwycD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIiBEZXN0aW5hdGlvbj0iaHR0cDovL21hdHJpeC5ub3J0aHN0YXJtbHMuY29tL01hdHJpeC9Mb2dpbi5hc3B4P3Bhc3N0aHJvdWdoPTEmYW1wO25vcmVkaXJlY3Q9MSIgSUQ9Il83ZmY3M2MzOGEzNmRiZWUxZjYzNjQwMGJiNzZmZTczYiIgSW5SZXNwb25zZVRvPSJfMDgxMGQxMWUtZDljOC00MjA0LTg1NTYtNjhhMWJmY2NkOWE1IiBJc3N1ZUluc3RhbnQ9IjIwMTUtMDQtMjRUMjA6NTU6NTMuNTQ0WiIgVmVyc2lvbj0iMi4wIiB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPjxzYW1sMjpJc3N1ZXIgeG1sbnM6c2FtbDI9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphc3NlcnRpb24iIEZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOm5hbWVpZC1mb3JtYXQ6ZW50aXR5Ij5odHRwczovL2lkcC5ub3J0aHN0YXJtbHMuY29tL2lkcC9zaGliYm9sZXRoPC9zYW1sMjpJc3N1ZXI+PGRzOlNpZ25hdHVyZSB4bWxuczpkcz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnIyI+PGRzOlNpZ25lZEluZm8+PGRzOkNhbm9uaWNhbGl6YXRpb25NZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiLz48ZHM6U2lnbmF0dXJlTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI3JzYS1zaGExIi8+PGRzOlJlZmVyZW5jZSBVUkk9IiNfN2ZmNzNjMzhhMzZkYmVlMWY2MzY0MDBiYjc2ZmU3M2IiPjxkczpUcmFuc2Zvcm1zPjxkczpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjZW52ZWxvcGVkLXNpZ25hdHVyZSIvPjxkczpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiPjxlYzpJbmNsdXNpdmVOYW1lc3BhY2VzIHhtbG5zOmVjPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiIFByZWZpeExpc3Q9InhzIi8+PC9kczpUcmFuc2Zvcm0+PC9kczpUcmFuc2Zvcm1zPjxkczpEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjc2hhMSIvPjxkczpEaWdlc3RWYWx1ZT5KSUtycmpJalZkaEpJb1ZqaHIvMU92SE5nazA9PC9kczpEaWdlc3RWYWx1ZT48L2RzOlJlZmVyZW5jZT48L2RzOlNpZ25lZEluZm8+PGRzOlNpZ25hdHVyZVZhbHVlPmsxRjVIU2txL1lJb1RxSVF3U3JFZmhtSXN1dXQySFFYaWg4Z2R1WUdvaGtQdk5hNURwK3ArZXFTa2luQzFwSGQvVDJyZCswb1pLcFBVdzhwOUdUN2lGbkJrc0VQVFB5cmN5UThtYVRTVHUrYmZYeFdBUXpKejE4TytUYmdQTFBWSWE2T2dlQW0xT2ltdkx5SHF0YjVzeVlYeUEwWjN3MnFOTzhzUE52STBhVlBaNUdCZDdxYjhwVkk1RTNNTCt1eEhGbXdic01rMnoxWW5BeHFFdkU0ZW13WGtTd2NnZkdWN2tVVVZtd2tFeWJuSnQ0dXpxbTd5TEowUGZFcXJjYVhnZ3M5MTl0Y09sWjVMRmhLOCtKU1ZFWkNlQXFveHZ2WjQxb0ozOHErUGR1TGtWYjBQeEN1SS9ESWY0VFNxUVVaQVlrcWpWRmFYaC82ekc0VVEvNmFwQT09PC9kczpTaWduYXR1cmVWYWx1ZT48ZHM6S2V5SW5mbz48ZHM6WDUwOURhdGE+PGRzOlg1MDlDZXJ0aWZpY2F0ZT5NSUlET3pDQ0FpT2dBd0lCQWdJVUx0eUd6SUlsTFU3ZVI3RzdsRGdpbWVZUEdBTXdEUVlKS29aSWh2Y05BUUVGQlFBd0h6RWRNQnNHCkExVUVBeE1VYVdSd0xtNXZjblJvYzNSaGNtMXNjeTVqYjIwd0hoY05NRGd4TWpJeU1UZ3dPVFV4V2hjTk1qZ3hNakl5TVRnd09UVXgKV2pBZk1SMHdHd1lEVlFRREV4UnBaSEF1Ym05eWRHaHpkR0Z5Yld4ekxtTnZiVENDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUApBRENDQVFvQ2dnRUJBSmRVdXlGbFcwYkVCcy92bUNsQVhIMWszYU1UNEZkdkp2dHZwSWtsU2JZMHJEcDlEam1QMTl3TW15T2xpSkQ4CnRQS1ZTNVQrdVM1ZVcyTWFST2pEQzJKY1ozUXUxRyt6b1dzY2lFeHlFSVJvYXdlZ1JDcnh5aWFpOVgvdjFqQVJpT1pqR1J2R2lVY04KMXE2QytZS2FQREljVnZ0OGxSTndiYVAwNlgzWjkxaWs4ekRjc296WHNHRW50OW9oRHFoUnNQUnBBQ1d5S29LVEo2eExuTmFrZnc2eApzdTNGNElsSUJtZVAzNHd3cjl1SHJjenpkeXcwNmNURXV0RXBrMTFyWlllWFlFc09tWVI3WEN4UzJiZFd5L1Q5eThYVGIwWWxtcThkCjdFYWdZaWZ4RG1nTkNMRWhXZUFQNnlJT3Y4ejJYNWY3eDEvQm5YM01sbnNyNEc1R21OOENBd0VBQWFOdk1HMHdUQVlEVlIwUkJFVXcKUTRJVWFXUndMbTV2Y25Sb2MzUmhjbTFzY3k1amIyMkdLMmgwZEhCek9pOHZhV1J3TG01dmNuUm9jM1JoY20xc2N5NWpiMjB2YVdSdwpMM05vYVdKaWIyeGxkR2d3SFFZRFZSME9CQllFRkxPcXJYZTF2UkR1RDRrcWErM1lrMWF5SkJZTk1BMEdDU3FHU0liM0RRRUJCUVVBCkE0SUJBUUFrUXhEMC9lNGFiaTJ2TG03MVYyM1pNRXVuTGxyN3pFbGVDRHJwYkxKRFhTVFc2VUdhTmJiMUhDZVl6L3U1VlNXTC9Cc3kKQ2FHdXRPdDlORXdKL1I3Tkt5RWFuOWRiUFEyNVA4WlVzMjFRNk14NkwyOWxQWTQ3ck9rYVBmUDZIY3hzczNTTU5rNjI3Z2JhcWtvNgpRZHhWVTQxY2RIc0JDdXA5QUNkcUtvc3VsREZjUDVwYmpJTG53QXRmYjhia2VaV2pkWUxKWnZCTE5tdXJJYVRHczBPNEhDakZBaGhCCkpoTzg2OElsRHQzUjVTZGVseDYzSklFTkdxa29xZ3gwcjlyVjdCTFVJZW5xd01mYVYxN0hVWU5XMmJ3VHNCaHpJSFc0dVhGeHZOU1MKWVhYNFMzalRweG40cGNmU0JNd3VseUZ5Q1BVZ1VoNHUwdWdHRkF5SUF2emM8L2RzOlg1MDlDZXJ0aWZpY2F0ZT48L2RzOlg1MDlEYXRhPjwvZHM6S2V5SW5mbz48L2RzOlNpZ25hdHVyZT48c2FtbDJwOlN0YXR1cz48c2FtbDJwOlN0YXR1c0NvZGUgVmFsdWU9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpzdGF0dXM6U3VjY2VzcyIvPjwvc2FtbDJwOlN0YXR1cz48c2FtbDI6QXNzZXJ0aW9uIHhtbG5zOnNhbWwyPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXNzZXJ0aW9uIiBJRD0iXzRiMzE3NmNkOGQ4NWIyZjg0YzJlZTkzMmRiN2MyNzdiIiBJc3N1ZUluc3RhbnQ9IjIwMTUtMDQtMjRUMjA6NTU6NTMuNTQ0WiIgVmVyc2lvbj0iMi4wIj48c2FtbDI6SXNzdWVyIEZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOm5hbWVpZC1mb3JtYXQ6ZW50aXR5Ij5odHRwczovL2lkcC5ub3J0aHN0YXJtbHMuY29tL2lkcC9zaGliYm9sZXRoPC9zYW1sMjpJc3N1ZXI+PHNhbWwyOlN1YmplY3Q+PHNhbWwyOk5hbWVJRCBGb3JtYXQ9InVybjpjbGFyZWl0eTpzYWZlbWxzOm5hbWVpZC1mb3JtYXQ6bG9naW5pZCIgTmFtZVF1YWxpZmllcj0iaHR0cHM6Ly9pZHAubm9ydGhzdGFybWxzLmNvbS9pZHAvc2hpYmJvbGV0aCI+dGxjZW5naW5lPC9zYW1sMjpOYW1lSUQ+PHNhbWwyOlN1YmplY3RDb25maXJtYXRpb24gTWV0aG9kPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6Y206YmVhcmVyIj48c2FtbDI6U3ViamVjdENvbmZpcm1hdGlvbkRhdGEgQWRkcmVzcz0iMjQuMTg1LjI0LjIwOSIgSW5SZXNwb25zZVRvPSJfMDgxMGQxMWUtZDljOC00MjA0LTg1NTYtNjhhMWJmY2NkOWE1IiBOb3RPbk9yQWZ0ZXI9IjIwMTUtMDQtMjRUMjE6MDA6NTMuNTQ0WiIgUmVjaXBpZW50PSJodHRwOi8vbWF0cml4Lm5vcnRoc3Rhcm1scy5jb20vTWF0cml4L0xvZ2luLmFzcHg/cGFzc3Rocm91Z2g9MSZhbXA7bm9yZWRpcmVjdD0xIi8+PC9zYW1sMjpTdWJqZWN0Q29uZmlybWF0aW9uPjwvc2FtbDI6U3ViamVjdD48c2FtbDI6Q29uZGl0aW9ucyBOb3RCZWZvcmU9IjIwMTUtMDQtMjRUMjA6NTU6NTMuNTQ0WiIgTm90T25PckFmdGVyPSIyMDE1LTA0LTI0VDIxOjAwOjUzLjU0NFoiPjxzYW1sMjpBdWRpZW5jZVJlc3RyaWN0aW9uPjxzYW1sMjpBdWRpZW5jZT5odHRwOi8vbWF0cml4Lm5vcnRoc3Rhcm1scy5jb20vTWF0cml4Lzwvc2FtbDI6QXVkaWVuY2U+PC9zYW1sMjpBdWRpZW5jZVJlc3RyaWN0aW9uPjwvc2FtbDI6Q29uZGl0aW9ucz48c2FtbDI6QXV0aG5TdGF0ZW1lbnQgQXV0aG5JbnN0YW50PSIyMDE1LTA0LTI0VDIwOjU1OjUyLjQ0OVoiIFNlc3Npb25JbmRleD0iX2VjMDBlN2IzZmU1MWNkMWRhMmY1YjJlNmU4YzM1ZDQxIj48c2FtbDI6U3ViamVjdExvY2FsaXR5IEFkZHJlc3M9IjI0LjE4NS4yNC4yMDkiLz48c2FtbDI6QXV0aG5Db250ZXh0PjxzYW1sMjpBdXRobkNvbnRleHRDbGFzc1JlZj51cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YWM6Y2xhc3NlczpQYXNzd29yZDwvc2FtbDI6QXV0aG5Db250ZXh0Q2xhc3NSZWY+PC9zYW1sMjpBdXRobkNvbnRleHQ+PC9zYW1sMjpBdXRoblN0YXRlbWVudD48c2FtbDI6QXR0cmlidXRlU3RhdGVtZW50PjxzYW1sMjpBdHRyaWJ1dGUgTmFtZT0iTGFzdE5hbWUiIE5hbWVGb3JtYXQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphdHRybmFtZS1mb3JtYXQ6dXJpIj48c2FtbDI6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnR5cGU9InhzOnN0cmluZyI+TWFseWFsYTwvc2FtbDI6QXR0cmlidXRlVmFsdWU+PC9zYW1sMjpBdHRyaWJ1dGU+PHNhbWwyOkF0dHJpYnV0ZSBOYW1lPSJBc3NvY2lhdGlvbklEIiBOYW1lRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXR0cm5hbWUtZm9ybWF0OnVyaSI+PHNhbWwyOkF0dHJpYnV0ZVZhbHVlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTp0eXBlPSJ4czpzdHJpbmciPlJNTFM8L3NhbWwyOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDI6QXR0cmlidXRlPjxzYW1sMjpBdHRyaWJ1dGUgTmFtZT0iRmlyc3ROYW1lIiBOYW1lRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXR0cm5hbWUtZm9ybWF0OnVyaSI+PHNhbWwyOkF0dHJpYnV0ZVZhbHVlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTp0eXBlPSJ4czpzdHJpbmciPktyaXNobmE8L3NhbWwyOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDI6QXR0cmlidXRlPjxzYW1sMjpBdHRyaWJ1dGUgRnJpZW5kbHlOYW1lPSJsb2dpbmlkIiBOYW1lPSJsb2dpbmlkIiBOYW1lRm9ybWF0PSJzdHJpbmciPjxzYW1sMjpBdHRyaWJ1dGVWYWx1ZSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj50bGNlbmdpbmU8L3NhbWwyOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDI6QXR0cmlidXRlPjxzYW1sMjpBdHRyaWJ1dGUgTmFtZT0iRW1haWwiIE5hbWVGb3JtYXQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphdHRybmFtZS1mb3JtYXQ6dXJpIj48c2FtbDI6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnR5cGU9InhzOnN0cmluZyI+a3Jpc2huYUB0bGNlbmdpbmUuY29tPC9zYW1sMjpBdHRyaWJ1dGVWYWx1ZT48L3NhbWwyOkF0dHJpYnV0ZT48c2FtbDI6QXR0cmlidXRlIE5hbWU9Ik1MUyIgTmFtZUZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmF0dHJuYW1lLWZvcm1hdDp1cmkiPjxzYW1sMjpBdHRyaWJ1dGVWYWx1ZSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5STUxTTU48L3NhbWwyOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDI6QXR0cmlidXRlPjwvc2FtbDI6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDI6QXNzZXJ0aW9uPjwvc2FtbDJwOlJlc3BvbnNlPg==",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/accesstokens/agents/sso?redirecturl=http://www.google.com",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"accesstokens",
+								"agents",
+								"sso"
+							],
+							"query": [
+								{
+									"key": "redirecturl",
+									"value": "http://www.google.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAML SSO POST Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"AuthDetails\" : { \"SAMLResponse\": \"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c2FtbDJwOlJlc3BvbnNlIHhtbG5zOnNhbWwycD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIiBEZXN0aW5hdGlvbj0iaHR0cDovL25vcnRoc3Rhcm1scy50bGNlbmdpbmUuY29tL1NTTzIvU0FNTC9Bc3NlcnRpb25Db25zdW1lclNlcnZpY2UuYXNweD9iaW5kaW5nPXBvc3QiIElEPSJfMDJjYWViMzE2MTA4NDQxMTlmNzFkMzFmZjQyOGY4MjUiIEluUmVzcG9uc2VUbz0iXzRkY2YzYWNkLWE4MDUtNDVhMS04OTU3LTVkZWRmY2NkZjMzMCIgSXNzdWVJbnN0YW50PSIyMDE1LTA0LTE2VDA0OjM3OjAzLjI5OVoiIFZlcnNpb249IjIuMCIgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIj48c2FtbDI6SXNzdWVyIHhtbG5zOnNhbWwyPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXNzZXJ0aW9uIiBGb3JtYXQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpuYW1laWQtZm9ybWF0OmVudGl0eSI+aHR0cHM6Ly9pZHAubm9ydGhzdGFybWxzLmNvbS9pZHAvc2hpYmJvbGV0aDwvc2FtbDI6SXNzdWVyPjxkczpTaWduYXR1cmUgeG1sbnM6ZHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxkczpTaWduZWRJbmZvPjxkczpDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIi8+PGRzOlNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNyc2Etc2hhMSIvPjxkczpSZWZlcmVuY2UgVVJJPSIjXzAyY2FlYjMxNjEwODQ0MTE5ZjcxZDMxZmY0MjhmODI1Ij48ZHM6VHJhbnNmb3Jtcz48ZHM6VHJhbnNmb3JtIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI2VudmVsb3BlZC1zaWduYXR1cmUiLz48ZHM6VHJhbnNmb3JtIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48ZWM6SW5jbHVzaXZlTmFtZXNwYWNlcyB4bWxuczplYz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiBQcmVmaXhMaXN0PSJ4cyIvPjwvZHM6VHJhbnNmb3JtPjwvZHM6VHJhbnNmb3Jtcz48ZHM6RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI3NoYTEiLz48ZHM6RGlnZXN0VmFsdWU+M29VcFpDU3RkelgrMUlRKzRNcUpPUlZkcHVBPTwvZHM6RGlnZXN0VmFsdWU+PC9kczpSZWZlcmVuY2U+PC9kczpTaWduZWRJbmZvPjxkczpTaWduYXR1cmVWYWx1ZT5UaWg1NlNhTUh6ak1xbG1LcU1aS3g2MUpqSjFwbWJZblVyWHZyMTdTWS9JenJJTlRaM0sydEN6UmZWQkc1Mkw4Szh1YUVya0Y5NXZHT2dBTWxQV0JON3huV3k4M3J2Wi9HcG11Y0I0dnZaWE5nK29mQzNmTWRlSTZ0MFo3UlZ4OXhzY0FiZ1ZHdFBqL0ZUYXZVZHVWZ2NkeVBic2xHR2orcWxvYVhXVmQrb2FwQVE4VXFiL2pCRUdZMzkza0dSWGFpbUx4N1kzOHg4RC83R2lkNi93Z2hmMFpJYld1all2Vk04bHdsRVFwNXNEUzlETVBNK3NYV05RN3R3S3FkV0JXWXdocXllcmtTaFBRM01RdE0yQlZFQmRXOFJxa0FIUFpLZDV4QVJsSXhhQThBWTI3V2c1MDdsTFUranpwSENVd216K0cza3FnTDRMbG1jOVdrOE12eGc9PTwvZHM6U2lnbmF0dXJlVmFsdWU+PGRzOktleUluZm8+PGRzOlg1MDlEYXRhPjxkczpYNTA5Q2VydGlmaWNhdGU+TUlJRE96Q0NBaU9nQXdJQkFnSVVMdHlHeklJbExVN2VSN0c3bERnaW1lWVBHQU13RFFZSktvWklodmNOQVFFRkJRQXdIekVkTUJzRwpBMVVFQXhNVWFXUndMbTV2Y25Sb2MzUmhjbTFzY3k1amIyMHdIaGNOTURneE1qSXlNVGd3T1RVeFdoY05Namd4TWpJeU1UZ3dPVFV4CldqQWZNUjB3R3dZRFZRUURFeFJwWkhBdWJtOXlkR2h6ZEdGeWJXeHpMbU52YlRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVAKQURDQ0FRb0NnZ0VCQUpkVXV5RmxXMGJFQnMvdm1DbEFYSDFrM2FNVDRGZHZKdnR2cElrbFNiWTByRHA5RGptUDE5d01teU9saUpEOAp0UEtWUzVUK3VTNWVXMk1hUk9qREMySmNaM1F1MUcrem9Xc2NpRXh5RUlSb2F3ZWdSQ3J4eWlhaTlYL3YxakFSaU9aakdSdkdpVWNOCjFxNkMrWUthUERJY1Z2dDhsUk53YmFQMDZYM1o5MWlrOHpEY3NvelhzR0VudDlvaERxaFJzUFJwQUNXeUtvS1RKNnhMbk5ha2Z3NngKc3UzRjRJbElCbWVQMzR3d3I5dUhyY3p6ZHl3MDZjVEV1dEVwazExclpZZVhZRXNPbVlSN1hDeFMyYmRXeS9UOXk4WFRiMFlsbXE4ZAo3RWFnWWlmeERtZ05DTEVoV2VBUDZ5SU92OHoyWDVmN3gxL0JuWDNNbG5zcjRHNUdtTjhDQXdFQUFhTnZNRzB3VEFZRFZSMFJCRVV3ClE0SVVhV1J3TG01dmNuUm9jM1JoY20xc2N5NWpiMjJHSzJoMGRIQnpPaTh2YVdSd0xtNXZjblJvYzNSaGNtMXNjeTVqYjIwdmFXUncKTDNOb2FXSmliMnhsZEdnd0hRWURWUjBPQkJZRUZMT3FyWGUxdlJEdUQ0a3FhKzNZazFheUpCWU5NQTBHQ1NxR1NJYjNEUUVCQlFVQQpBNElCQVFBa1F4RDAvZTRhYmkydkxtNzFWMjNaTUV1bkxscjd6RWxlQ0RycGJMSkRYU1RXNlVHYU5iYjFIQ2VZei91NVZTV0wvQnN5CkNhR3V0T3Q5TkV3Si9SN05LeUVhbjlkYlBRMjVQOFpVczIxUTZNeDZMMjlsUFk0N3JPa2FQZlA2SGN4c3MzU01OazYyN2diYXFrbzYKUWR4VlU0MWNkSHNCQ3VwOUFDZHFLb3N1bERGY1A1cGJqSUxud0F0ZmI4YmtlWldqZFlMSlp2QkxObXVySWFUR3MwTzRIQ2pGQWhoQgpKaE84NjhJbER0M1I1U2RlbHg2M0pJRU5HcWtvcWd4MHI5clY3QkxVSWVucXdNZmFWMTdIVVlOVzJid1RzQmh6SUhXNHVYRnh2TlNTCllYWDRTM2pUcHhuNHBjZlNCTXd1bHlGeUNQVWdVaDR1MHVnR0ZBeUlBdnpjPC9kczpYNTA5Q2VydGlmaWNhdGU+PC9kczpYNTA5RGF0YT48L2RzOktleUluZm8+PC9kczpTaWduYXR1cmU+PHNhbWwycDpTdGF0dXM+PHNhbWwycDpTdGF0dXNDb2RlIFZhbHVlPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6c3RhdHVzOlN1Y2Nlc3MiLz48L3NhbWwycDpTdGF0dXM+PHNhbWwyOkFzc2VydGlvbiB4bWxuczpzYW1sMj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiIgSUQ9Il8wOWNlZTkzYzYzMWY3OTcxNjBiYjYwMDYxM2JkZDVmYiIgSXNzdWVJbnN0YW50PSIyMDE1LTA0LTE2VDA0OjM3OjAzLjI5OVoiIFZlcnNpb249IjIuMCI+PHNhbWwyOklzc3VlciBGb3JtYXQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpuYW1laWQtZm9ybWF0OmVudGl0eSI+aHR0cHM6Ly9pZHAubm9ydGhzdGFybWxzLmNvbS9pZHAvc2hpYmJvbGV0aDwvc2FtbDI6SXNzdWVyPjxzYW1sMjpTdWJqZWN0PjxzYW1sMjpOYW1lSUQgRm9ybWF0PSJ1cm46Y2xhcmVpdHk6c2FmZW1sczpuYW1laWQtZm9ybWF0OmxvZ2luaWQiIE5hbWVRdWFsaWZpZXI9Imh0dHBzOi8vaWRwLm5vcnRoc3Rhcm1scy5jb20vaWRwL3NoaWJib2xldGgiIFNQTmFtZVF1YWxpZmllcj0iaHR0cDovL25vcnRoc3Rhcm1scy50bGNlbmdpbmUuY29tL1NTTzIvIj50bGNlbmdpbmU8L3NhbWwyOk5hbWVJRD48c2FtbDI6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sMjpTdWJqZWN0Q29uZmlybWF0aW9uRGF0YSBBZGRyZXNzPSIyNC4xODUuMjQuMjA5IiBJblJlc3BvbnNlVG89Il80ZGNmM2FjZC1hODA1LTQ1YTEtODk1Ny01ZGVkZmNjZGYzMzAiIE5vdE9uT3JBZnRlcj0iMjAxNS0wNC0xNlQwNDo0MjowMy4yOTlaIiBSZWNpcGllbnQ9Imh0dHA6Ly9ub3J0aHN0YXJtbHMudGxjZW5naW5lLmNvbS9TU08yL1NBTUwvQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlLmFzcHg/YmluZGluZz1wb3N0Ii8+PC9zYW1sMjpTdWJqZWN0Q29uZmlybWF0aW9uPjwvc2FtbDI6U3ViamVjdD48c2FtbDI6Q29uZGl0aW9ucyBOb3RCZWZvcmU9IjIwMTUtMDQtMTZUMDQ6Mzc6MDMuMjk5WiIgTm90T25PckFmdGVyPSIyMDE1LTA0LTE2VDA0OjQyOjAzLjI5OVoiPjxzYW1sMjpBdWRpZW5jZVJlc3RyaWN0aW9uPjxzYW1sMjpBdWRpZW5jZT5odHRwOi8vbm9ydGhzdGFybWxzLnRsY2VuZ2luZS5jb20vU1NPMi88L3NhbWwyOkF1ZGllbmNlPjwvc2FtbDI6QXVkaWVuY2VSZXN0cmljdGlvbj48L3NhbWwyOkNvbmRpdGlvbnM+PHNhbWwyOkF1dGhuU3RhdGVtZW50IEF1dGhuSW5zdGFudD0iMjAxNS0wNC0xNlQwNDozNzowMy4xMjFaIiBTZXNzaW9uSW5kZXg9Il9lOWI0NTQ5YmVkMTEyYjNiMzdmZTE1NGEwMGY3ODE3ZCI+PHNhbWwyOlN1YmplY3RMb2NhbGl0eSBBZGRyZXNzPSIyNC4xODUuMjQuMjA5Ii8+PHNhbWwyOkF1dGhuQ29udGV4dD48c2FtbDI6QXV0aG5Db250ZXh0Q2xhc3NSZWY+dXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFjOmNsYXNzZXM6UGFzc3dvcmQ8L3NhbWwyOkF1dGhuQ29udGV4dENsYXNzUmVmPjwvc2FtbDI6QXV0aG5Db250ZXh0Pjwvc2FtbDI6QXV0aG5TdGF0ZW1lbnQ+PHNhbWwyOkF0dHJpYnV0ZVN0YXRlbWVudD48c2FtbDI6QXR0cmlidXRlIE5hbWU9Ikxhc3ROYW1lIiBOYW1lRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXR0cm5hbWUtZm9ybWF0OnVyaSI+PHNhbWwyOkF0dHJpYnV0ZVZhbHVlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTp0eXBlPSJ4czpzdHJpbmciPk1hbHlhbGE8L3NhbWwyOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDI6QXR0cmlidXRlPjxzYW1sMjpBdHRyaWJ1dGUgTmFtZT0iQXNzb2NpYXRpb25JRCIgTmFtZUZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmF0dHJuYW1lLWZvcm1hdDp1cmkiPjxzYW1sMjpBdHRyaWJ1dGVWYWx1ZSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5STUxTPC9zYW1sMjpBdHRyaWJ1dGVWYWx1ZT48L3NhbWwyOkF0dHJpYnV0ZT48c2FtbDI6QXR0cmlidXRlIE5hbWU9IkZpcnN0TmFtZSIgTmFtZUZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmF0dHJuYW1lLWZvcm1hdDp1cmkiPjxzYW1sMjpBdHRyaWJ1dGVWYWx1ZSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5LcmlzaG5hPC9zYW1sMjpBdHRyaWJ1dGVWYWx1ZT48L3NhbWwyOkF0dHJpYnV0ZT48c2FtbDI6QXR0cmlidXRlIEZyaWVuZGx5TmFtZT0ibG9naW5pZCIgTmFtZT0ibG9naW5pZCIgTmFtZUZvcm1hdD0ic3RyaW5nIj48c2FtbDI6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnR5cGU9InhzOnN0cmluZyI+dGxjZW5naW5lPC9zYW1sMjpBdHRyaWJ1dGVWYWx1ZT48L3NhbWwyOkF0dHJpYnV0ZT48c2FtbDI6QXR0cmlidXRlIE5hbWU9IkVtYWlsIiBOYW1lRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXR0cm5hbWUtZm9ybWF0OnVyaSI+PHNhbWwyOkF0dHJpYnV0ZVZhbHVlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTp0eXBlPSJ4czpzdHJpbmciPmtyaXNobmFAdGxjZW5naW5lLmNvbTwvc2FtbDI6QXR0cmlidXRlVmFsdWU+PC9zYW1sMjpBdHRyaWJ1dGU+PHNhbWwyOkF0dHJpYnV0ZSBOYW1lPSJNTFMiIE5hbWVGb3JtYXQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphdHRybmFtZS1mb3JtYXQ6dXJpIj48c2FtbDI6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnR5cGU9InhzOnN0cmluZyI+Uk1MU01OPC9zYW1sMjpBdHRyaWJ1dGVWYWx1ZT48L3NhbWwyOkF0dHJpYnV0ZT48L3NhbWwyOkF0dHJpYnV0ZVN0YXRlbWVudD48L3NhbWwyOkFzc2VydGlvbj48L3NhbWwycDpSZXNwb25zZT4=\"}}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/accesstokens/agents",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"accesstokens",
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend password to client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13191/resendpassword",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13191",
+								"resendpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://uatapiv2.tlcengine.com/v2/api/nsmls/agents/verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "Claire1212@Emerald-RealEstate.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/verify",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VefiryEmailSpacio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "krishna@tlcengine.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/verify",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete AccessToken of agent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/accesstokens/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/12d062f2-f3b1-4383-9400-53630491f891",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"accesstokens",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"12d062f2-f3b1-4383-9400-53630491f891"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commute",
+			"item": [
+				{
+					"name": "Get Gas Rates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/gasrates",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"gasrates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete bookmarks for client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[1]"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/agents/22eadc24-a6ac-4e86-b743-9dd66e78f461/clients/13194/bookmarks",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"agents",
+								"22eadc24-a6ac-4e86-b743-9dd66e78f461",
+								"clients",
+								"13194",
+								"bookmarks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ListingsData",
+			"item": [
+				{
+					"name": "Get Listing Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"limitrecords\":\"100\",\"ficoscore\":\"760-850\",\"loantype\":\"30YrFixed\",\"lifestyle\":\"couple-no-kids\",\"orderby\":\"newest\",\"orderbydirection\":\"DESC\",\"propertytype\":\"sf\",\"beds\":\"1g\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Listing Data by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData/2953226",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData",
+								"2953226"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Listing by MLSNumber",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/listings/mlsids/3572480",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"listings",
+								"mlsids",
+								"3572480"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Search by Polygon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"polygon\":{\"limitrecords\":\"100\",\"ficoscore\":\"760-850\",\"loantype\":\"30YrFixed\",\"lifestyle\":\"couple-no-kids\",\"orderby\":\"newest\",\"orderbydirection\":\"DESC\",\"propertytype\":\"sf\",\"polygon\":[\"-75.32226562500001 40.78054143186033,-75.30029296875001 40.81380923056961,-75.27832031250001 40.84706035607122,-75.24536132812501 40.88029480552824,-75.22338867187501 40.9052096972736,-75.20141601562501 40.92181441237853,-75.17944335937501 40.93841495689795,-75.14648437500001 40.94671366508002,-75.12451171875001 40.95501133048621,-75.09155273437501 40.95501133048621,-75.04760742187501 40.971603532799115,-74.99267578125001 40.971603532799115,-74.95971679687501 40.971603532799115,-74.92675781250001 40.971603532799115,-74.88281250000001 40.96330795307353,-74.84985351562501 40.96330795307353,-74.81689453125001 40.95501133048621,-74.79492187500001 40.93011520598307,-74.77294921875001 40.92181441237853,-74.75097656250001 40.88860081193033,-74.73999023437501 40.84706035607122,-74.72900390625001 40.82212357516945,-74.71801757812501 40.78054143186033,-74.71801757812501 40.73893324113603,-74.70703125000001 40.713955826286046,-74.70703125000001 40.68896903762434,-74.70703125000001 40.66397287638688,-74.70703125000001 40.63896734381725,-74.70703125000001 40.60561205826018,-74.70703125000001 40.56389453066509,-74.71801757812501 40.538851525354666,-74.75097656250001 40.48038142908172,-74.77294921875001 40.455307212131494,-74.80590820312501 40.43022363450862,-74.83886718750001 40.40513069752789,-74.87182617187501 40.38002840251183,-74.89379882812501 40.36328834091583,-74.92675781250001 40.3549167507906,-74.95971679687501 40.329795743702064,-75.00366210937501 40.3130432088809,-75.03662109375001 40.30466538259176,-75.08056640625001 40.287906612507406,-75.13549804687501 40.271143686084194,-75.20141601562501 40.26276066437183,-75.24536132812501 40.245991504199026,-75.28930664062501 40.23760536584024,-75.33325195312501 40.23760536584024,-75.3662109375 40.23760536584024,-75.39916992187501 40.23760536584024,-75.43212890625 40.23760536584024,-75.50903320312501 40.245991504199026,-75.56396484375001 40.271143686084194,-75.61889648437501 40.287906612507406,-75.65185546875001 40.30466538259176,-75.67382812500001 40.32141999593439,-75.32226562500001 40.78054143186033\"]}\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Search by Address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"location\":\"St Paul, MN, United States\"\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/nsmls/ListingsData",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"nsmls",
+								"ListingsData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get POIs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/listings/2953226/pois",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"listings",
+								"2953226",
+								"pois"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get School Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/listings/2953247/schools",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"listings",
+								"2953247",
+								"schools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calculate TLC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"PropertyPrice\": 80000,\n        \"DownPayment\": 3000,\n        \"DownPercentage\": 20,\n        \"LivingAreaSquareFeet\": 1500,\n        \"NetMonthlyIncome\": 20000,\n        \"MonthlyDebt\": 1000,\n        \"TaxBracket\": 10,\n        \"LifeStyle\": \"single\",\n        \"FicoScore\": \"760-850\",\n        \"KnownApr\": 10,\n        \"LoanType\": \"30YRFIXED\",\n        \"WorkAddressList\": [\n            {\n                \"WorkAddress\": \"Minnetonka, MN, United States\",\n                \"TransportationType\": \"CAR\",\n                \"CarYear\": 0,\n                \"CarMake\": \"2011\",\n                \"CarModel\": \"\",\n                \"CarType\": \"\",\n                \"CityMPG\": 11,\n                \"HwyMPG\": 13,\n                \"CurrentGasRate\": 4.5,\n                \"CommuteParkingCost\": 100,\n                \"DaysOfCommute\": 0\n            },\n            {\n                \"WorkAddress\": \"Minneapolis, MN, United States\",\n                \"TransportationType\": \"CAR\",\n                \"CarYear\": 0,\n                \"CarMake\": \"\",\n                \"CarModel\": \"\",\n                \"CarType\": \"\",\n                \"CityMPG\": 0,\n                \"HwyMPG\": 0,\n                \"CurrentGasRate\": 0,\n                \"CommuteParkingCost\": 0,\n                \"DaysOfCommute\": 5\n            }\n        ]\n    }"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/tlc/listings/2953226",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"tlc",
+								"listings",
+								"2953226"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pois by Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/listings/2953247/pois/ATMs",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"listings",
+								"2953247",
+								"pois",
+								"ATMs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Listing Data by lastupdatedon",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData?lastupdatedon=2015-03-15&limitrecords=10",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							],
+							"query": [
+								{
+									"key": "lastupdatedon",
+									"value": "2015-03-15"
+								},
+								{
+									"key": "limitrecords",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calculate TLC Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"PropertyPrice\": 80000,\n        \"DownPayment\": 3000,\n        \"DownPercentage\": 20,\n        \"LivingAreaSquareFeet\": 1500,\n        \"NetMonthlyIncome\": 20000,\n        \"MonthlyDebt\": 1000,\n        \"TaxBracket\": 10,\n        \"LifeStyle\": \"single\",\n        \"FicoScore\": \"760-850\",\n        \"KnownApr\": 10,\n        \"LoanType\": \"30YRFIXED\",\n        \"WorkAddressList\": [\n            {\n                \"WorkAddress\": \"Minnetonka, MN, United States\",\n                \"TransportationType\": \"CAR\",\n                \"CarYear\": 0,\n                \"CarMake\": \"2011\",\n                \"CarModel\": \"\",\n                \"CarType\": \"\",\n                \"CityMPG\": 11,\n                \"HwyMPG\": 13,\n                \"CurrentGasRate\": 4.5,\n                \"CommuteParkingCost\": 100,\n                \"DaysOfCommute\": 0\n            },\n            {\n                \"WorkAddress\": \"Minneapolis, MN, United States\",\n                \"TransportationType\": \"CAR\",\n                \"CarYear\": 0,\n                \"CarMake\": \"\",\n                \"CarModel\": \"\",\n                \"CarType\": \"\",\n                \"CityMPG\": 0,\n                \"HwyMPG\": 0,\n                \"CurrentGasRate\": 0,\n                \"CommuteParkingCost\": 0,\n                \"DaysOfCommute\": 5\n            }\n        ]\n    }"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/tlc/listings/83/clients/10306",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"tlc",
+								"listings",
+								"83",
+								"clients",
+								"10306"
+							]
+						},
+						"description": "API to calculate TLC for client"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Listing Data by CreatedOn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skip\":0,\"CreatedOn\":\"2015-04-13 07:36:18.000\"\r\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest  Listing Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/listings/latest",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"listings",
+								"latest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Multiple Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skip\":0,\r\n  \"location\": [\r\n    \"56050\",\"Golden Valley, MN, United States\",\"-93.369 45.050,-93.156 45.040,-93.158 45.045,-93.161 45.051,-93.163 45.056,-93.168 45.062,-93.174 45.068,-93.183 45.073,-93.193 45.077,-93.206 45.080,-93.222 45.082,-93.241 45.084,-93.260 45.086,-93.284 45.086,-93.297 45.086,-93.314 45.086,-93.330 45.086,-93.343 45.083,-93.354 45.079,-93.364 45.074,-93.369 45.068,-93.372 45.063,-93.374 45.057,-93.373 45.052,-93.369 45.050\"\r\n  ],\r\n  \"beds\":2,\r\n  \"commutetimemins\":30,\r\n  \"commutemode\":\"WALK\"\r\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Multiple Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData?location=%5B%22-93.369%2045.050%2C-93.156%2045.040%2C-93.158%2045.045%2C-93.161%2045.051%2C-93.163%2045.056%2C-93.168%2045.062%2C-93.174%2045.068%2C-93.183%2045.073%2C-93.193%2045.077%2C-93.206%2045.080%2C-93.222%2045.082%2C-93.241%2045.084%2C-93.260%2045.086%2C-93.284%2045.086%2C-93.297%2045.086%2C-93.314%2045.086%2C-93.330%2045.086%2C-93.343%2045.083%2C-93.354%2045.079%2C-93.364%2045.074%2C-93.369%2045.068%2C-93.372%2045.063%2C-93.374%2045.057%2C-93.373%2045.052%2C-93.369%2045.050%22%2C%22Golden%20Valley%2C%20MN%2C%20United%20States%22%5D&commutetimemins=30&commutemode=WALK",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "%5B%22-93.369%2045.050%2C-93.156%2045.040%2C-93.158%2045.045%2C-93.161%2045.051%2C-93.163%2045.056%2C-93.168%2045.062%2C-93.174%2045.068%2C-93.183%2045.073%2C-93.193%2045.077%2C-93.206%2045.080%2C-93.222%2045.082%2C-93.241%2045.084%2C-93.260%2045.086%2C-93.284%2045.086%2C-93.297%2045.086%2C-93.314%2045.086%2C-93.330%2045.086%2C-93.343%2045.083%2C-93.354%2045.079%2C-93.364%2045.074%2C-93.369%2045.068%2C-93.372%2045.063%2C-93.374%2045.057%2C-93.373%2045.052%2C-93.369%2045.050%22%2C%22Golden%20Valley%2C%20MN%2C%20United%20States%22%5D"
+								},
+								{
+									"key": "commutetimemins",
+									"value": "30"
+								},
+								{
+									"key": "commutemode",
+									"value": "WALK"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search listing by commute time",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/Json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"polygon\":{\"limitrecords\":\"100\",\"ficoscore\":\"760-850\",\"loantype\":\"30YrFixed\",\"lifestyle\":\"couple-no-kids\",\"orderby\":\"newest\",\"orderbydirection\":\"DESC\",\"propertytype\":\"sf\",\"commutes\":[{\"commuteaddress\":\"New City, NY, USA\",\"commutemode\":\"car\",\"commutetimemins\":\"30\"}]}}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/listingsdata",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"listingsdata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demographics",
+			"item": [
+				{
+					"name": "Get Demographic Data by Zipcode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/demographics/07436",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"demographics",
+								"07436"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Search by MLS Number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"keywords\":\"#4511599\"\r\n}"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/ListingsData",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"ListingsData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BaseData",
+			"item": [
+				{
+					"name": "Get Car Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/vehicles/2000",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"vehicles",
+								"2000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get APR Rates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/aprrates/NY",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"aprrates",
+								"NY"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Entertainment Rates by Zipcode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/entertainment/07843",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"entertainment",
+								"07843"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get day care cost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"Age\":\"5\",\n        \"daycare\":\"full-day\",\n        \"NumberOfChildren\":2\n    },\n    {\n        \"Age\":\"5\",\n        \"daycare\":\"full-day\",\n        \"NumberOfChildren\":3\n        \n    }\n]"
+						},
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/daycarecost",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"daycarecost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get School District",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/schooldistricts",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"schooldistricts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get end point settings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/settings",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vibes Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+							}
+						],
+						"url": {
+							"raw": "https://uat-api.tlcengine.com/v3/api/cjmls/basedata/Vibes?state=WI&city=RIVER FALLS&zipcode=54022",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"tlcengine",
+								"com"
+							],
+							"path": [
+								"v3",
+								"api",
+								"cjmls",
+								"basedata",
+								"Vibes"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "WI"
+								},
+								{
+									"key": "city",
+									"value": "RIVER FALLS"
+								},
+								{
+									"key": "zipcode",
+									"value": "54022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Current Residence Expense",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "Application/Json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ClientId\":60,\n  \"Address\":\"Minneapolis, MN, United States\",\n  \"SquareFeet\":2000\n}\n"
+				},
+				"url": {
+					"raw": "https://api.tlcengine.com/v3/api/gsmls/tlc/residencecost",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tlcengine",
+						"com"
+					],
+					"path": [
+						"v3",
+						"api",
+						"gsmls",
+						"tlc",
+						"residencecost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cache",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.tlcengine.com/v3/api/cache",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tlcengine",
+						"com"
+					],
+					"path": [
+						"v3",
+						"api",
+						"cache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Get Auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tlcengine.com/v3/api/gsmls/accesstokens/auth",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tlcengine",
+						"com"
+					],
+					"path": [
+						"v3",
+						"api",
+						"gsmls",
+						"accesstokens",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Route",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "Application/Json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{    \n    \"FromAddress\":\"1415 8th Ave, Sacramento, CA 95818\",\n    \"ToAddress\":\"399 Market St San Francisco, CA 94111\",\n    \"CurrentGasRate\":2.3,\n    \"DaysOfCommute\":5,\n    \"CarYear\":\"2014\",\n    \"CarMake\":\"\",\n    \"CarModel\":\"\",\n    \"CarType\":\"\",\n    \"CityMPG\":\"\",\n    \"HwyMPG\":\"\",\n    \"CommuteParkingCost\":90,\n    \"CommuteTollCost\":150\n}"
+				},
+				"url": {
+					"raw": "https://api.tlcengine.com/v3/api/gsmls/commute/route",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tlcengine",
+						"com"
+					],
+					"path": [
+						"v3",
+						"api",
+						"gsmls",
+						"commute",
+						"route"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "Application/Json"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"AudienceType\":\"client\",\n \"Username\":\"nirmalc@adolpha.com\"\n}"
+				},
+				"url": {
+					"raw": "https://api.tlcengine.com/v3/api/gsmls/accesstokens/credentials/reset",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tlcengine",
+						"com"
+					],
+					"path": [
+						"v3",
+						"api",
+						"gsmls",
+						"accesstokens",
+						"credentials",
+						"reset"
+					]
+				},
+				"description": "This API if for reset password for client or agent."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "Application/Json"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer 5147FACE-1211-444E-A563-F0B85B3C12D1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"AudienceId\":\"2FDD34C1-FB51-43ED-A478-27593E9CEC0A\",\n \"AudienceType\":\"agent\",\n \"CurrentPassword\":\"xxx1\",\n \"NewPassword\":\"xxx\"\n}\n"
+				},
+				"url": {
+					"raw": "https://api.tlcengine.com/v3/api/gsmls/accesstokens/credentials/update",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tlcengine",
+						"com"
+					],
+					"path": [
+						"v3",
+						"api",
+						"gsmls",
+						"accesstokens",
+						"credentials",
+						"update"
+					]
+				},
+				"description": "This API is used for updating client and agent password."
+			},
+			"response": []
+		}
+	]
+}

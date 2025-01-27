@@ -1,54 +1,86 @@
 from flask import Flask, request, jsonify
 import requests
+import json
+from api_decider import determine_api_url
+from dotenv import load_dotenv
 import os
-import re
+from pymongo import MongoClient
+from llama_index import GPTSimpleVectorIndex, MongoDBReader
 
 app = Flask(__name__)
 
-PROPERTY_API_URL = "???"
-OLLAMA_API_URL = "http://localhost:11434/api/generate"
+# Load environment variables
+load_dotenv()
+BEARER_TOKEN = os.getenv("API_BEARER_TOKEN")
+OLLAMA_API_URL = "http://localhost:11434/api/generate"  # Ensure Ollama is running locally
+MONGO_URI = os.getenv("???")
 
-@app.route('/propertydetails', methods=['POST'])
+client = MongoClient(MONGO_URI)
+db = client['???']
+collection = db['???']
+
+mongo_reader = MongoDBReader(collection)
+index = GPTSimpleVectorIndex.from_documents(mongo_reader)
+
+# Load API URL endpoints
+with open('get_api_endpoints.json') as f:
+    API_URLS = json.load(f)
+
+@app.route('/propertydetails', methods=['GET'])
 def property_details():
-    current_url = request.json.get('url', '')
-    
-    match = re.search(r'/propertydetail/(\d+)/', current_url)
-    
-    if not match:
-        return jsonify({"error": "Invalid URL or property ID not found"}), 400
-    
-    property_id = match.group(1)
+    # Get the URL and prompt from query parameters
+    current_url = request.args.get('url', '')
+    user_prompt = request.args.get('prompt', '')
 
-    property_api_url = f"{PROPERTY_API_URL}/{property_id}"
-    property_response = requests.get(property_api_url)
+    if not current_url or not user_prompt:
+        return jsonify({"error": "Both 'url' and 'prompt' query parameters are required."}), 400
+
+    api_url = determine_api_url(user_prompt, current_url)
+    
+    if not api_url:
+        return jsonify({"error": "No suitable API URL found for the given prompt"}), 404
+
+    headers = {
+        "Authorization": f"Bearer {BEARER_TOKEN}"
+    }
+
+    property_response = requests.get(api_url, headers=headers)
     
     if property_response.status_code != 200:
         return jsonify({"error": "Property not found or failed to retrieve"}), 404
 
     property_data = property_response.json()
-    user_prompt = request.json.get('prompt', '')
+    ollama_response = call_ollama(property_data, user_prompt)
 
-    ollama_response = ollama_generate(user_prompt, property_data)
+    return ollama_response, 200
 
-    return jsonify({
-        "property_data": property_data,
-        "ollama_response": ollama_response
-    })
 
-def ollama_generate(prompt, data):
-    combined_prompt = f"{prompt}\n\nProperty Details: {data}"
-    
+def call_ollama(property_data, user_prompt):
+    """Send property data and user prompt to Ollama and return its response."""
+    ollama_prompt = (
+        f"You are a chatbot helping someone learn more about a real estate property\n"
+        f"Here's the property data:\n{json.dumps(property_data, indent=2)}\n\n"
+        f"User question: {user_prompt}\n"
+        f"Be straightforward and provide a clear, concise, and helpful answer for the user based on the property details."
+    )
+
+    headers = {"Content-Type": "application/json"}
     payload = {
-        "prompt": combined_prompt,
-        "model": "llama3.2:3b"
+        "model": "llama3.2:3b",
+        "prompt": ollama_prompt
     }
-    
-    response = requests.post(OLLAMA_API_URL, json=payload)
-    
+
+    response = requests.post(OLLAMA_API_URL, headers=headers, json=payload)
+
     if response.status_code == 200:
-        return response.json().get('response', '')
+        response_data = ""
+        for line in response.iter_lines():
+            if line:
+                part = json.loads(line)
+                response_data += part.get("response", "")
+        return response_data.strip()
     else:
-        return {"error": "Failed to retrieve response from Ollama"}
+        return f"Failed to get a response from Ollama. Status code: {response.status_code}"
 
 if __name__ == '__main__':
     app.run(debug=True)
