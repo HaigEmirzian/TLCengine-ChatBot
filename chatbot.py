@@ -13,11 +13,11 @@ app = Flask(__name__)
 load_dotenv()
 BEARER_TOKEN = os.getenv("API_BEARER_TOKEN")
 OLLAMA_API_URL = "http://localhost:11434/api/generate"  # Ensure Ollama is running locally
-MONGO_URI = os.getenv("???")
+MONGO_URI = os.getenv("MONGO_URI")
 
 client = MongoClient(MONGO_URI)
-db = client['???']
-collection = db['???']
+db = client['poi']
+collection = db['amenities']
 
 # Init LlamaIndex with MongoDB data
 mongo_reader = MongoDBReader(collection)
